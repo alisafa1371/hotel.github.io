@@ -1,0 +1,47 @@
+.cta {
+  text-align: center;
+  padding: 3.5rem 0;
+  background-color: var(--color-grey-light-1);
+  font-size: 1.6rem;
+  &__text {
+    h2 {
+      font-size: inherit;
+      font-weight: 400;
+      letter-spacing: 1.1px;
+      color: var(--color-grey-dark-3);
+      text-transform: uppercase;
+      margin-bottom: 2.4rem;
+      ////////////////////////////////////Queries/////////////////////////////
+      // 600px
+      @media only screen and (max-width: $tablet-bp) {
+        font-size: 1.4rem;
+      }
+      ////////////////////////////////////Queries/////////////////////////////
+      // 500px
+      @media only screen and (max-width: $mobile-bp) {
+        font-size: 1.1rem;
+      }
+    }
+    &--number {
+      color: var(--color-primary);
+      font-size: 2.2rem;
+      font-weight: 600;
+      ////////////////////////////////////Queries/////////////////////////////
+      // 600px
+      @media only screen and (max-width: $tablet-bp) {
+        font-size: 1.8rem;
+      }
+      ////////////////////////////////////Queries/////////////////////////////
+      // 500px
+      @media only screen and (max-width: $mobile-bp) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  ////////////////////////////////////Queries/////////////////////////////
+  // 930px
+  @media only screen and (max-width: $laptop-bp) {
+    padding: 2.5rem 0;
+  }
+}

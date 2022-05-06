@@ -1,0 +1,25 @@
+.detail {
+  font-size: 1.4rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4.4rem;
+  padding: 4.4rem;
+  border-bottom: var(--border);
+  background-color: var(--color-grey-light-1);
+  ////////////////////////////////////Queries/////////////////////////////
+  // 930px
+  @media only screen and (max-width: $laptop-bp) {
+    padding: 3rem;
+    gap: 3rem;
+  }
+  ////////////////////////////////////Queries/////////////////////////////
+  // 600px
+  @media only screen and (max-width: $tablet-bp) {
+    grid-template-columns: 1fr;
+  }
+  ////////////////////////////////////Queries/////////////////////////////
+  // 330px
+  @media only screen and (max-width: $mobile-third-bp) {
+    padding: 1.4rem;
+  }
+}

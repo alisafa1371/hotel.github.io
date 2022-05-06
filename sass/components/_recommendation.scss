@@ -1,0 +1,17 @@
+.recommendation {
+  font-size: 1.2rem;
+  color: var(--color-grey-light-4);
+  @include flex-between;
+  &__image {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    border: 0.4rem solid #fff;
+  }
+  &__image:not(:last-child) {
+    margin-right: -2rem;
+  }
+  &__picture-box {
+    display: flex;
+  }
+}

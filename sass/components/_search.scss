@@ -1,0 +1,75 @@
+// ///////////////////////// Search bar/////////////////////////////////////
+.search {
+  flex: 0 0 40%;
+  @include flex-center; //making search a flex container itself
+
+  ////////////////////////////INPUT style///////////////////////////////
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    background-color: var(--color-grey-light-2);
+    border-radius: 50px;
+    padding: 0.7rem 2rem;
+    width: 75%;
+    margin-right: -3.5rem;
+    // width,box-shadowa and bg animate normal but border will be animate from top to left (CW) with delay
+    transition: width 0.4s ease, border-top 0.4s 0.2s ease,
+      border-right 0.4s 0.25s ease, border-bottom 0.4s 0.3s ease,
+      border-left 0.4s 0.35s ease, box-shadow 0.3s 0.35s, background-color 0.2s;
+
+    &:focus {
+      outline: none;
+      // border sepration is needed for transition
+      border-top: 1px solid var(--color-primary-light);
+      border-right: 1px solid var(--color-primary-light);
+      border-bottom: 1px solid var(--color-primary-light);
+      border-left: 1px solid var(--color-primary-light);
+      width: 100%;
+      box-shadow: 0 0.8rem 2.5rem -1.6rem var(--color-primary-light);
+      background-color: var(--color-grey-light-3);
+    }
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--color-grey-light-4);
+    }
+  }
+  // changing the bg color of button when input ic cklicked (focused)
+  &__input:focus + &__button {
+    background-color: var(--color-grey-light-3);
+  }
+
+  /////////////////////////////BUTTON style///////////////////////////////
+
+  &__button {
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-grey-light-2);
+    transition: all 1s;
+    fill: var(--color-grey-dark-1);
+
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      transform: rotate(360deg);
+    }
+  }
+
+  /////////////////////////////NOTIFICATION BAR style///////////////////////////////
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    background: none;
+  }
+  ////////////////////////////////////Queries/////////////////////////////
+  // 500px
+  @media only screen and (max-width: $mobile-bp) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+    justify-content: space-around;
+  }
+}

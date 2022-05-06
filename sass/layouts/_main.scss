@@ -1,0 +1,10 @@
+.content {
+  display: grid;
+  grid-template-columns: 18% 82%;
+  ////////////////////////////////////Queries/////////////////////////////
+  // 930px
+  @media only screen and (max-width: $laptop-bp) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+}

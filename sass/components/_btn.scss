@@ -1,0 +1,101 @@
+.btn {
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
+  cursor: pointer;
+
+  &__inline {
+    border: none;
+    background-color: transparent;
+    font-size: inherit;
+    padding-bottom: 0.2rem;
+    color: var(--color-primary);
+    border-bottom: 1px solid currentColor;
+    cursor: pointer;
+    transition: all 0.3s;
+    order: 1;
+
+    span {
+      margin-left: 0.3rem;
+      transition: margin-left 0.3s;
+    }
+
+    &:hover + .overview__flag {
+      opacity: 1;
+    }
+    &:hover {
+      color: var(--color-grey-dark-2);
+      span {
+        margin-left: 0.8rem;
+      }
+    }
+    &:focus {
+      outline: none;
+      animation: tapping 1s infinite;
+    }
+  }
+  &__cta {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #fff;
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+    border-radius: 50px;
+    position: relative;
+    box-shadow: var(--medium-shadow);
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: var(--dark-shadow);
+      background-image: linear-gradient(
+        to left,
+        var(--color-primary-light),
+        var(--color-primary-dark)
+      );
+    }
+
+    &:focus {
+      outline: none;
+      animation: tapping 1s infinite;
+    }
+
+    & > * {
+      display: inline-block;
+      transition: all 0.4s;
+    }
+    &--book-now {
+      padding: 2rem 7.5rem;
+      ////////////////////////////////////Queries/////////////////////////////
+      // 600px
+      @media only screen and (max-width: $tablet-bp) {
+        padding: 1.6rem 6.4rem;
+      }
+      ////////////////////////////////////Queries/////////////////////////////
+      // 400px
+      @media only screen and (max-width: $mobile-second-bp) {
+        padding: 1.4rem 6rem;
+      }
+    }
+    &--room-left {
+      padding: 2rem;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: -100%;
+      ////////////////////////////////////Queries/////////////////////////////
+      // 400px
+      @media only screen and (max-width: $mobile-second-bp) {
+        padding: 1.6rem;
+      }
+    }
+    &:hover &--book-now {
+      transform: translateY(100%);
+    }
+    &:hover &--room-left {
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "abstracts/variables";
+@import "abstracts/mixin";
+@import "abstracts/animation";
+
+@import "base/base";
+
+@import "pages/home";
+
+@import "layouts/header";
+@import "layouts/main";
+@import "layouts/sidebar";
+@import "layouts/detail";
+@import "layouts/testimonial";
+@import "layouts/description";
+
+@import "components/gallery";
+@import "components/search";
+@import "components/user-nav";
+@import "components/overview";
+@import "components/btn";
+@import "components/paragraph";
+@import "components/list";
+@import "components/recommendation";
+@import "components/user-review";
+@import "components/cta";

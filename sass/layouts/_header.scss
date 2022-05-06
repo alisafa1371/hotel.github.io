@@ -1,0 +1,22 @@
+.header {
+  font-size: 1.6rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--border);
+  height: 7rem;
+  grid-column: 1/-1;
+  @include flex-between;
+
+  // ///////////////////////////Logo/////////////////////////////////////
+  &__logo {
+    width: 5.2rem;
+    height: 4rem;
+    margin-left: 2rem;
+  }
+  ////////////////////////////////////Queries/////////////////////////////
+  // 500px
+  @media only screen and (max-width: $mobile-bp) {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    height: 11rem;
+  }
+}

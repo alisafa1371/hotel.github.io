@@ -1,0 +1,138 @@
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+  grid-row: 1/-1;
+  @include flex-column;
+  // entire width is needed to be filled for transition effecet later
+  align-items: stretch;
+  ////////////////////////////////////Queries/////////////////////////////
+  // 930px
+  @media only screen and (max-width: $laptop-bp) {
+    grid-column: 1/-1;
+    grid-row: 1;
+  }
+}
+.side-nav {
+  font-size: 1.6rem;
+  list-style: none;
+  margin-top: 3.5rem;
+
+  &__link:link,
+  &__link:visited {
+    color: var(--color-grey-light-1);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 3rem;
+    @include flex-center;
+    justify-content: flex-start;
+    gap: 2rem;
+    // z-index works only with position
+    position: relative;
+    z-index: 999;
+    ////////////////////////////////////Queries/////////////////////////////
+    // 930px
+    @media only screen and (max-width: $laptop-bp) {
+      justify-content: center;
+      padding: 2rem;
+    }
+    ////////////////////////////////////Queries/////////////////////////////
+    // 600px
+    @media only screen and (max-width: $tablet-bp) {
+      @include flex-column;
+      padding: 1rem;
+      gap: 1rem;
+    }
+    ////////////////////////////////////Queries/////////////////////////////
+    // 400px
+    @media only screen and (max-width: $mobile-second-bp) {
+      gap: 0.3rem;
+      padding: 0.3rem;
+    }
+  }
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+      ////////////////////////////////////Queries/////////////////////////////
+      // 930px
+      @media only screen and (max-width: $laptop-bp) {
+        margin-bottom: 0;
+      }
+    }
+    ////////////////////////////////////Queries/////////////////////////////
+    // 930px
+    @media only screen and (max-width: $laptop-bp) {
+      flex: 1;
+    }
+  }
+  &__item::before {
+    content: "";
+    width: 3px;
+    height: 0%;
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    transition: height 0.3s, width 0.4s 0.3s cubic-bezier(1, 0, 0, 0.99),
+      background-color 0.1s;
+  }
+  &__item:hover::before,
+  &__item--active::before {
+    height: 100%;
+    width: 100%;
+  }
+  &__item:active::before {
+    background-color: var(--color-primary-light);
+  }
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+    ////////////////////////////////////Queries/////////////////////////////
+    // 600px
+    @media only screen and (max-width: $tablet-bp) {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+    ////////////////////////////////////Queries/////////////////////////////
+    // 330px
+    @media only screen and (max-width: $mobile-third-bp) {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+  &__text {
+    ////////////////////////////////////Queries/////////////////////////////
+    // 600px
+    @media only screen and (max-width: $tablet-bp) {
+      font-size: 1.4rem;
+    }
+    ////////////////////////////////////Queries/////////////////////////////
+    // 330px
+    @media only screen and (max-width: $mobile-third-bp) {
+      font-size: 1rem;
+    }
+  }
+  ////////////////////////////////////Queries/////////////////////////////
+  // 930px
+  @media only screen and (max-width: $laptop-bp) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+}
+
+.legal {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--color-grey-light-4);
+  text-align: center;
+  padding: 2.5rem;
+
+  ////////////////////////////////////Queries/////////////////////////////
+  // 930px
+  @media only screen and (max-width: $laptop-bp) {
+    display: none;
+  }
+}

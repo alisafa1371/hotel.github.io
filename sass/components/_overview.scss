@@ -1,0 +1,110 @@
+.overview {
+  @include flex-center;
+  border-bottom: var(--border);
+  gap: 2rem;
+  margin-left: 1.4rem;
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-primary);
+    ////////////////////////////////////Queries/////////////////////////////
+    // 600px
+    @media only screen and (max-width: $tablet-bp) {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+  &__heading h1 {
+    font-size: 2.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    ////////////////////////////////////Queries/////////////////////////////
+    // 930px
+    @media only screen and (max-width: $laptop-bp) {
+      font-size: 2.2rem;
+    }
+    ////////////////////////////////////Queries/////////////////////////////
+    // 600px
+    @media only screen and (max-width: $tablet-bp) {
+      font-size: 1.8rem;
+    }
+    ////////////////////////////////////Queries/////////////////////////////
+    // 500px
+    @media only screen and (max-width: $mobile-bp) {
+      margin-right: auto;
+    }
+  }
+  &__stars {
+    margin-right: auto;
+    @include flex-center;
+    ////////////////////////////////////Queries/////////////////////////////
+    // 500px
+    @media only screen and (max-width: $mobile-bp) {
+      margin-right: 0;
+    }
+  }
+  &__flag {
+    opacity: 0;
+    transition: all 1s;
+    img {
+      width: 14rem;
+      height: 6rem;
+      ////////////////////////////////////Queries/////////////////////////////
+      // 930px
+      @media only screen and (max-width: $laptop-bp) {
+        width: 0rem;
+        height: 0rem;
+      }
+    }
+  }
+  &__location {
+    font-size: 1.2rem;
+    @include flex-center;
+    fill: var(--color-primary-dark);
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  &__rate {
+    padding: 0 2.4rem;
+    background-color: var(--color-primary);
+    color: var(--color-grey-light-1);
+    align-self: stretch;
+    @include flex-column;
+    justify-content: center;
+    &-avrage {
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin-bottom: -0.5rem;
+      ////////////////////////////////////Queries/////////////////////////////
+      // 600px
+      @media only screen and (max-width: $tablet-bp) {
+        font-size: 1.8rem;
+        margin-left: 0.8rem;
+      }
+    }
+    ////////////////////////////////////Queries/////////////////////////////
+    // 930px
+    @media only screen and (max-width: $laptop-bp) {
+      padding: 0 1.8rem;
+    }
+  }
+  ////////////////////////////////////Queries/////////////////////////////
+  // 600px
+  @media only screen and (max-width: $tablet-bp) {
+    gap: 1.2rem;
+  }
+  ////////////////////////////////////Queries/////////////////////////////
+  // 500px
+  @media only screen and (max-width: $mobile-bp) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+  }
+  ////////////////////////////////////Queries/////////////////////////////
+  // 330px
+  @media only screen and (max-width: $mobile-third-bp) {
+    margin: 0.8rem;
+  }
+}

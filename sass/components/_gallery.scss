@@ -1,0 +1,11 @@
+.gallery {
+  display: flex;
+  grid-column: 1/-1;
+  &__item {
+    width: 33.3333%;
+  }
+  &__image {
+    width: 100%;
+    display: block; //avoid small space under images
+  }
+}

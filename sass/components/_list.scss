@@ -1,0 +1,42 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  &__item {
+    @include flex-center;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    flex: 0 0 50%; // = width:50%
+    margin-bottom: 0.7rem;
+
+    &::before {
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      // for older browsers
+
+      background-image: url(../img/chevron-thin-right.svg);
+      background-size: cover;
+
+      // Newer browsers - mask
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        // because at top background image has been set so  this will not work corectly
+        background-image: none;
+      }
+    }
+    ////////////////////////////////////Queries/////////////////////////////
+    // 400px
+    @media only screen and (max-width: $mobile-second-bp) {
+      flex: 0 0 100%;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.user-nav {
+  @include flex-center;
+  align-self: stretch;
+
+  &__icon-box {
+    position: relative;
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: var(--color-grey-dark-1);
+  }
+  // all childeren of the user-nav
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    @include flex-center;
+  }
+  & > *:hover {
+    background-color: var(--color-grey-light-2);
+  }
+  &__user {
+    gap: 1rem;
+    img {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+    }
+  }
+  &__notification {
+    font-size: 0.8rem;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    height: 1.75rem;
+    width: 1.75rem;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.1rem;
+  }
+  &__user-name {
+    font-size: 1.2rem;
+  }
+}

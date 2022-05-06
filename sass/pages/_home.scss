@@ -1,0 +1,25 @@
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--dark-shadow);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  ////////////////////////////////////Queries/////////////////////////////
+  // +1440px
+  @media only screen and (min-width: $large-screens-bp) {
+    max-width: 85%;
+  }
+  // 1200px
+  @media only screen and (max-width: $desktop-first-bp) {
+    margin: 0 auto;
+  }
+  // 1160px height
+  @media only screen and (min-height: 72.5em) and (max-width: $laptop-bp) {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}

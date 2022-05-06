@@ -1,0 +1,14 @@
+@keyframes tapping {
+  0% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: var(--dark-shadow);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
